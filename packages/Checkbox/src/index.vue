@@ -1,0 +1,107 @@
+<template>
+  <div class="d-checkbox">
+    <template v-if="options.length !== 0">
+      <el-checkbox-group v-model="modelValue" @change="changeAll">
+        <el-checkbox :label="item.label" v-for="item in options" :key="item.label" :disabled="item.disabled" @change="changeItem($event, item)">
+          <template v-if="item.value">
+            {{ item.value }}
+          </template>
+          <template v-else>
+            {{ item.label }}
+          </template>
+        </el-checkbox>
+      </el-checkbox-group>
+    </template>
+    <template v-else>
+      <el-checkbox v-model="modelValue.check" :label="modelValue.label" :disabled="modelValue.disabled" @change="changeItem($event, modelValue)" >
+        <template v-if="modelValue.value">
+          {{ modelValue.value }}
+        </template>
+        <template v-else>
+          {{ modelValue.label }}
+        </template>
+      </el-checkbox>
+    </template>
+  </div>
+</template>
+
+<script setup>
+import { computed, ref, watch, unref, watchEffect, reactive, onMounted, nextTick, useAttrs } from 'vue';
+import { ElCheckbox, ElCheckboxGroup } from 'element-plus';
+
+const props = defineProps({
+  modelValue: [Object, Array],
+  options: { type: Array, default: () => [] }
+});
+let emit = defineEmits(['update:modelValue', 'change', 'change-all']);
+const modelValue = computed({
+  get: () => props.modelValue,
+  set: (value) => {
+    emit("update:modelValue", value);
+  }
+});
+
+let changeItem = (visible, item) => {
+  emit('change', visible, item);
+};
+let changeAll = (checkLisy) => {
+  emit('change-all', checkLisy);
+};
+
+</script>
+
+<style lang="less" scoped>
+.d-checkbox {
+  width: auto;
+  // 多选框
+  ::v-deep(.el-checkbox){
+    // 基本样式
+    .el-checkbox__inner {
+      background: #FFFFFF;
+      border: 1px solid #BCBDBE;
+      border-radius: 0;
+      width: 16px;
+      height: 16px;
+    }
+    .el-checkbox__label {
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+      color: #0E1D38;
+      padding-left: 10px;
+      line-height: 18px;
+    }
+    // 选中后的样式
+    .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+      background: #0455da;
+      border:none;
+      color:#FFFFFF;
+    }
+    .el-checkbox__input.is-checked+.el-checkbox__label {
+      color: #0E1D38;
+    }
+    // 选中框对勾样式
+    .el-checkbox__inner::after {
+      border-right-width: 2px;
+      border-bottom-width: 2px;
+      left: 6px;
+      top: 2.5px;
+      transition: none;
+    }
+    // 不可选的样式
+    .is-disabled{
+      .el-checkbox__inner {
+        border: none;
+        background: #D3D5D8;
+        box-sizing: border-box;
+      }
+    }
+    .el-checkbox__input.is-disabled+span.el-checkbox__label {
+      color: #A8AFB9;
+    }
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
+      top: 7px;
+    }
+  }
+}
+</style>

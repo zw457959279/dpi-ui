@@ -1,0 +1,26 @@
+[
+  {
+    "compName": "StrengthMeter",
+    "compZhName": "密码强度组件",
+    "compDesc": "验证密码强度",
+    "compClassName": "strength-meter"
+  },
+  {
+    "compName": "CountTo",
+    "compZhName": "数字动画组件",
+    "compDesc": "这是一个有数字动画的组件",
+    "compClassName": "count-to"
+  },
+  {
+    "compName": "EnChart",
+    "compZhName": "水平位移图",
+    "compDesc": "目前使用在智慧监测平台驾驶舱",
+    "compClassName": "en-chart"
+  },
+  {
+    "compName": "AlarmInfo",
+    "compZhName": "预警消息",
+    "compDesc": "轮播展示当前预警信息",
+    "compClassName": "alarm-info"
+  }
+]
