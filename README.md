@@ -1,11 +1,5 @@
 # 组件库
 
-## 获取代码
-
-```shell
-# 克隆代码
-git clone -b dev git@172.16.122.68:kf/dpi-web/dpi-ui.git
-```
 
 ##  npm script
 

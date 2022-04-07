@@ -1,6 +1,7 @@
 {
   "name": "dpi-ui",
   "version": "1.0.0",
+  "repository": "https://github.com/zw457959279/dpi-ui.git",
   "main": "dist/dpi.es.js",
   "scripts": {
     "dev": "vite --config ./build/base.config.js",
