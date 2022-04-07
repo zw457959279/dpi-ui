@@ -1,39 +1,13 @@
-# 组件库
-
-
-##  npm script
-
-```json
-"scripts": {
-  # 安装依赖
-  "dev": "vite --config ./build/base.config.js",
-  # 构建组件使用说明网页
-  "build:doc": "vite build --config ./build/doc.config.js",
-  # 构建组件库
-  "build:lib": "vite build --config ./build/lib.config.js",
-  # 生成组件、demo、文档模板
-  "gen": "node ./script/genNewComp/index.js"
-}
-```
-
-## 目录说明
-
-```shell
-.
-├── build # 打包脚本相关
-│   ├── base.config.js # 基础配置文件
-│   ├── doc.config.js # 文档配置文件
-│   └── lib.config.js # 库配置文件
-├── packages # 组件目录
-│   ├── _hooks # 复用逻辑
-│   ├── _utils # 通用工具
-│   └── component # 组件
-├── script # 命令与构建相关逻辑
-│   └── genNewComp # 生成组件逻辑
-└── src # 页面代码
-```
+# dpi-ui
 
 ## 使用
+
+引入方式
+
+```shell
+import DLib from 'dpi-ui/packages';
+app.user(DLib);
+```
 
 ### 生成新组件模板
 
