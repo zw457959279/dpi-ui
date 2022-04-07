@@ -36,6 +36,18 @@ const modelValue = computed({
         height: 2.125rem;
         line-height: 2.125rem;
         border-radius: 0!important;
+        box-shadow: none;
+        border: 1px solid #BCBDBE;
+      }
+      .el-input__inner:focus{
+        border-color: #0455da;
+        box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+      }
+    }
+    .is-focus{
+      .el-input__inner{
+        border-color: #0455da;
+        box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
       }
     }
   }

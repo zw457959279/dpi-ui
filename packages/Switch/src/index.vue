@@ -38,6 +38,10 @@ let changeItem = (value) => {
     --el-switch-button-size: 14px;
     height: 20px;
     .el-switch__core{
+      caret-color: rgba(255, 255, 255, 0);
+      .el-switch__inner{
+        top: 2px;
+      }
       .el-switch__action{
         top: 2px;
         .el-icon.is-loading{

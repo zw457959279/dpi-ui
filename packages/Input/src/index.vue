@@ -42,7 +42,7 @@ const props = defineProps({
   spaceable: { type: Boolean, default: () => { return false; } },
   suffixIcon: [String, Object], // 自定义后缀
   prefixIcon: [String, Object], // 自定义前缀
-})
+});
 let emit = defineEmits(['update:modelValue', 'input', 'clear', 'blur', 'focus', 'change']);
 let slots = useSlots();
 const modelValue = computed({
@@ -86,10 +86,35 @@ let focusClick = () => {
       height: 2.125rem;
       line-height: 2.125rem;
       border-radius: 0!important;
+      box-shadow: none;
+      border: 1px solid #BCBDBE;
+    }
+    .el-input__inner:focus{
+      border-color: #0455da;
+      box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
     }
     .el-input-group__append,.el-input-group__prepend{
       padding: 0 12px;
       border-radius: 0;
+      box-shadow: none;
+      border: 1px solid #BCBDBE;
+    }
+    .el-input-group__prepend{
+      border-right: none;
+    }
+    .el-input-group__append{
+      border-left: none;
+    }
+  }
+  ::v-deep(.el-input-number){
+    border: none;
+    .el-input-number__decrease.el-input-number__decrease:hover{
+      border: none;
+    }
+    .el-input{
+      .el-input__inner{
+        box-shadow: none;
+      }
     }
   }
   ::v-deep(.el-textarea){
@@ -98,6 +123,11 @@ let focusClick = () => {
     --el-input-focus-border-color: #0455da;
     .el-textarea__inner{
       border-radius: 0;
+      box-shadow: none;
+      border: 1px solid #BCBDBE;
+    }
+    .el-textarea__inner:focus{
+      border-color: #0455da;
     }
   }
 }

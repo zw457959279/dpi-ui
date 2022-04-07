@@ -1,16 +1,15 @@
 <template>
   <div class="d-upload">
-    <el-input v-model="uploadName" placeholder="请输入内容"></el-input>
     <el-upload
       class="upload-demo"
       :action="action"
-      :on-success="handleSuccess"
-      :on-remove="handleRemove"
+      :on-success="onSuccess"
+      :on-remove="onRemove"
       :before-remove="beforeRemove"
-      :limit="1"
-      :on-exceed="handleExceed"
-      :on-change="handleChange"
-      :show-file-list="false"
+      :limit="limit"
+      :on-exceed="onExceed"
+      :on-change="onChange"
+      :show-file-list="showFileList"
     >
       <el-button type="primary">选择文件</el-button>
     </el-upload>
@@ -21,25 +20,17 @@
 import { computed, ref, watch, unref, watchEffect, reactive, onMounted, nextTick, useAttrs } from 'vue';
 import { ElUpload, ElInput, ElButton } from 'element-plus';
 
-let uploadName = ref('');
-let action = ref('http://siteops.uat2.dpi.net.cn:8088/file/upload');
-let fileList = ref([]);
-let handleSuccess = (response, files) => {
-  console.log('handleSuccess', response, files);
-  uploadName.value = files.name;
-};
-let handleRemove = (item1, item2, item3) => {
-  console.log('handleRemove', item1, item2, item3);
-};
-let beforeRemove = (item1, item2, item3) => {
-  console.log('beforeRemove', item1, item2, item3);
-};
-let handleExceed = (item1, item2, item3) => {
-  console.log('handleExceed', item1, item2, item3);
-};
-let handleChange = (item1, item2, item3) => {
-  console.log('handleChange', item1, item2, item3);
-};
+const props = defineProps({
+  modelValue: [String, Number],
+  action: { type: String, default: 'http://siteops.uat2.dpi.net.cn:8088/file/upload'},
+  limit: { type: Number, default: 1},
+  showFileList: { type: Boolean, default: false},
+  onSuccess: Function,
+  onRemove: Function,
+  beforeRemove: Function,
+  onExceed: Function,
+  onChange: Function,
+})
 </script>
 
 <style lang="less" scoped>
@@ -57,6 +48,11 @@ let handleChange = (item1, item2, item3) => {
       height: 2.125rem;
       line-height: 2.125rem;
       border-radius: 0!important;
+      box-shadow: none;
+      border: 1px solid #BCBDBE;
+    }
+    .el-input__inner:focus{
+      border-color: #0455da;
     }
   }
   ::v-deep(.el-button){

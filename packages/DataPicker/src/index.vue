@@ -46,7 +46,7 @@ let getTime = (item) => {
 <style lang="less" scoped>
 .d-data-picker {
   width: 100%;
-  ::v-deep(.el-date-editor){
+  ::v-deep(.el-date-editor--date){
     --el-input-border-color: #BCBDBE;
     --el-input-hover-border-color: #BCBDBE;
     --el-input-focus-border-color: #0455da;
@@ -55,7 +55,25 @@ let getTime = (item) => {
       height: 2.125rem;
       line-height: 2.125rem;
       border-radius: 0;
+      box-shadow: none;
+      border: 1px solid #BCBDBE;
     }
+    .el-input__inner:focus{
+      border-color: #0455da;
+      box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+    }
+  }
+  ::v-deep(.el-date-editor--daterange){
+    --el-input-focus-border-color: #0455da;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #BCBDBE;
+  }
+  ::v-deep(.el-date-editor--daterange.is-active){
+    border-color: #0455da;
+    box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
   }
 }
 </style>

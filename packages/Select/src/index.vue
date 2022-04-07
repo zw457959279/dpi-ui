@@ -64,17 +64,26 @@ onMounted(() => {
     width: 240px;
     ::v-deep(.el-select){
       width: 100%;
-      --el-select-border-color-hover: #BCBDBE;
-      --el-select-input-focus-border-color: #0455da;
+      height: 2.125rem;
+      line-height: 2.125rem;
       .el-input{
-        --el-input-border-color: #BCBDBE;
-        --el-border-color-base: #BCBDBE;
-        --el-input-hover-border-color: #BCBDBE;
         --el-input-focus-border-color: #0455da;
         .el-input__inner{
           height: 2.125rem;
           line-height: 2.125rem;
           border-radius: 0!important;
+          box-shadow: none!important;
+          border: 1px solid #BCBDBE;
+        }
+        .el-input__inner:focus{
+          border-color: #0455da;
+          box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+        }
+      }
+      .el-input.is-focus{
+        .el-input__inner{
+          border-color: #0455da;
+          box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
         }
       }
       .el-icon{

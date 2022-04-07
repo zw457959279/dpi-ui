@@ -68,7 +68,7 @@ let changeAll = (checkLisy) => {
       font-family: Microsoft YaHei;
       font-weight: 400;
       color: #0E1D38;
-      padding-left: 10px;
+      padding-left: 8px;
       line-height: 18px;
     }
     // 选中后的样式
