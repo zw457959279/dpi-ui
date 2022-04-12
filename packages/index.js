@@ -22,6 +22,7 @@ import { CheckboxPlugin } from './Checkbox';
 import { RadioPlugin } from './Radio';
 import { SwitchPlugin } from './Switch';
 import { UploadPlugin } from './Upload';
+import { IconPlugin } from './Icon';
 
 const DPlugin = {
   install(app) {
@@ -41,6 +42,7 @@ const DPlugin = {
     RadioPlugin.install?.(app);
     SwitchPlugin.install?.(app);
     UploadPlugin.install?.(app);
+    IconPlugin.install?.(app);
   },
 };
 
@@ -62,3 +64,4 @@ export * from './Checkbox'
 export * from './Radio'
 export * from './Switch'
 export * from './Upload'
+export * from './Icon'

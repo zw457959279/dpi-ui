@@ -94,5 +94,11 @@
     "compZhName": "上传",
     "compDesc": "默认：这是一个新组件",
     "compClassName": "upload"
+  },
+  {
+    "compName": "Icon",
+    "compZhName": "图标",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "icon"
   }
 ]

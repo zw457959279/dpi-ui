@@ -6,7 +6,7 @@
 
 ```shell
 import DLib from 'dpi-ui/packages';
-app.user(DLib);
+app.use(DLib);
 ```
 
 ### 生成新组件模板

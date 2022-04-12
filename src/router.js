@@ -88,6 +88,11 @@
     name: 'Upload',
     path: '/components/Upload',
     component: () => import('packages/Upload/docs/README.md'),
+  },{
+    title: '图标',
+    name: 'Icon',
+    path: '/components/Icon',
+    component: () => import('packages/Icon/docs/README.md'),
   }];
  
  const routerConfig = {
