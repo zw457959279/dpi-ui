@@ -1,6 +1,6 @@
 {
   "name": "dpi-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/dpi.es.js",
   "scripts": {
     "dev": "vite --config ./build/base.config.js",
