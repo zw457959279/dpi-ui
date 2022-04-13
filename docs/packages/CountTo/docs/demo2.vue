@@ -7,6 +7,7 @@
       :endVal="300000"
       :decimals="2"
       :duration="6000"
+      :useEasing="false"
     />
   </div>
 </template>

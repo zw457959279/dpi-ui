@@ -6,27 +6,28 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# 密码强度组件
+# 上传
 
-验证密码强度
+默认：这是一个新组件
 
 ## 使用场景
 
-创建用户新建密码、修改密码时使用
+请写明组件使用场景
 
 ## 基础用法
-<Preview comp-name="StrengthMeter" demo-name="demo">
+<Preview comp-name="Upload" demo-name="demo">
   <demo />
 </Preview>
 
 ## 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
 :-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否 
-`arg2` | 第二个参数 | string | - | `default` | 否
+`action` | 请求 URL | string | — | `http://siteops.uat2.dpi.net.cn:8088/file/upload` | 否 
+`on-success` | 文件上传成功时的钩子 | function | `(response, file)` | — | 否
+`on-remove` | 文件列表移除文件时的钩子 | function | — | — | 否
+`before-remove` | 删除文件之前的钩子 | function | — | — | 否
+`limit` | 允许上传文件的最大数量 | number | — | `1` | 否
+`on-exceed` | 当超出限制时，执行的钩子函数 | function | — | — | 否
+`on-change` | 文件状态改变时的钩子 | function | — | — | 否
+`show-file-list` | 是否显示已上传文件列表 | boolean | — | `false` | 否
 
-## 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三

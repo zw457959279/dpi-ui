@@ -6,7 +6,7 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# 密码强度组件
+# 密码强度输入框组件
 
 验证密码强度
 
@@ -15,18 +15,22 @@ import demo from './demo.vue'
 创建用户新建密码、修改密码时使用
 
 ## 基础用法
+
 <Preview comp-name="StrengthMeter" demo-name="demo">
   <demo />
 </Preview>
 
 ## 属性
-参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
-:-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否 
-`arg2` | 第二个参数 | string | - | `default` | 否
+
+|       参数       |      说明      |  类型  | 可选值 | 默认值  | 是否必填 |
+| :--------------: | :------------: | :----: | :----: | :-----: | :------: |
+| `value(v-model)` |   输入框内容   | string |   -    |  `--`   |    否    |
+|    `disabled`    | 输入框是否可用 | string |   -    | `false` |    否    |
+|   `showInput`    | 是否显示输入框 | string |   -    | `false` |    否    |
 
 ## 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+
+|     事件名     |          说明          |    参数列表     | 参数说明 |
+| :------------: | :--------------------: | :-------------: | :------: |
+|    `change`    | 输入框内容变化时的回调 |   function(e)   | 输入的值 |
+| `score-change` |  密码强度变化时的回调  | function(score) | 参数强度 |

@@ -6,6 +6,7 @@
 
 ```shell
 import DLib from 'dpi-ui/packages';
+const app = createApp(App)
 app.use(DLib);
 ```
 

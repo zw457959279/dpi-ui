@@ -1,142 +1,73 @@
 <template>
-  <div :class="prefixCls" class="relative">
-    <InputPassword
-      v-if="showInput"
-      v-bind="$attrs"
-      allowClear
-      :value="innerValueRef"
-      @change="handleChange"
-      :disabled="disabled"
+  <div class="d-upload">
+    <el-upload
+      class="upload-demo"
+      :action="action"
+      :on-success="onSuccess"
+      :on-remove="onRemove"
+      :before-remove="beforeRemove"
+      :limit="limit"
+      :on-exceed="onExceed"
+      :on-change="onChange"
+      :show-file-list="showFileList"
     >
-      <template #[item]="data" v-for="item in Object.keys($slots)">
-        <slot :name="item" v-bind="data"></slot>
-      </template>
-    </InputPassword>
-    <div :class="`${prefixCls}-bar`">
-      <div :class="`${prefixCls}-bar--fill`" :data-score="getPasswordStrength"></div>
-    </div>
+      <el-button type="primary">选择文件</el-button>
+    </el-upload>
   </div>
 </template>
 
-<script>
-  import { defineComponent, computed, ref, watch, unref, watchEffect } from 'vue';
-  import { Input } from 'ant-design-vue';
-  import zxcvbn from 'zxcvbn';
+<script setup>
+import { computed, ref, watch, unref, watchEffect, reactive, onMounted, nextTick, useAttrs } from 'vue';
+import { ElUpload, ElInput, ElButton } from 'element-plus';
 
-  export default defineComponent({
-    name: 'StrengthMeter',
-    components: { InputPassword: Input.Password },
-    props: {
-      value: String,
-      showInput: {
-        type: Boolean,
-        default: () => true
-      },
-      disabled: Boolean,
-    },
-    emits: ['score-change', 'change'],
-    setup(props, { emit }) {
-      const innerValueRef = ref('');
-      const prefixCls = 'd-strength-meter'
-      const getPasswordStrength = computed(() => {
-        const { disabled } = props;
-        if (disabled) return -1;
-        const innerValue = unref(innerValueRef);
-        const score = innerValue ? zxcvbn(unref(innerValueRef)).score : -1;
-        emit('score-change', score);
-        return score;
-      });
-
-      function handleChange(e) {
-        innerValueRef.value = e.target.value;
-      }
-
-      watchEffect(() => {
-        innerValueRef.value = props.value || '';
-      });
-
-      watch(
-        () => unref(innerValueRef),
-        (val) => {
-          emit('change', val);
-        }
-      );
-
-      return {
-        getPasswordStrength,
-        handleChange,
-        prefixCls,
-        innerValueRef,
-      };
-    },
-  });
+const props = defineProps({
+  modelValue: [String, Number],
+  action: { type: String, default: 'http://siteops.uat2.dpi.net.cn:8088/file/upload'},
+  limit: { type: Number, default: 1},
+  showFileList: { type: Boolean, default: false},
+  onSuccess: Function,
+  onRemove: Function,
+  beforeRemove: Function,
+  onExceed: Function,
+  onChange: Function,
+})
 </script>
+
 <style lang="less" scoped>
-  @prefix-cls: ~'d-strength-meter';
-
-  .@{prefix-cls} {
-    &-bar {
-      position: relative;
-      height: 6px;
-      margin: 10px auto 6px;
-      background-color: #eee;
-      border-radius: 6px;
-
-      &::before,
-      &::after {
-        position: absolute;
-        z-index: 10;
-        display: block;
-        width: 20%;
-        height: inherit;
-        background-color: transparent;
-        border-color: #fff;
-        border-style: solid;
-        border-width: 0 5px 0 5px;
-        content: '';
-      }
-
-      &::before {
-        left: 20%;
-      }
-
-      &::after {
-        right: 20%;
-      }
-
-      &--fill {
-        position: absolute;
-        width: 0;
-        height: inherit;
-        background-color: transparent;
-        border-radius: inherit;
-        transition: width 0.5s ease-in-out, background 0.25s;
-
-        &[data-score='0'] {
-          width: 20%;
-          background-color: darken(red, 10%);
-        }
-
-        &[data-score='1'] {
-          width: 40%;
-          background-color: red;
-        }
-
-        &[data-score='2'] {
-          width: 60%;
-          background-color: yellow;
-        }
-
-        &[data-score='3'] {
-          width: 80%;
-          background-color: fade(green, 50%);
-        }
-
-        &[data-score='4'] {
-          width: 100%;
-          background-color: green;
-        }
-      }
+.d-upload {
+  width: auto;
+  display: flex;
+  ::v-deep(.el-input){
+    width: 320px;
+    margin-right: 8px;
+    --el-input-border-color: #BCBDBE;
+    --el-border-color-base: #BCBDBE;
+    --el-input-hover-border-color: #BCBDBE;
+    --el-input-focus-border-color: #0455da;
+    .el-input__inner{
+      height: 2.125rem;
+      line-height: 2.125rem;
+      border-radius: 0!important;
+      box-shadow: none;
+      border: 1px solid #BCBDBE;
+    }
+    .el-input__inner:focus{
+      border-color: #0455da;
     }
   }
+  ::v-deep(.el-button){
+    --el-button-bg-color: #FFF;
+    --el-button-text-color: #0E1D38;
+    --el-button-border-color: #BCBDBE;
+    --el-button-hover-bg-color: #FFF;
+    --el-button-hover-border-color: #0455da;
+    --el-button-hover-text-color: #0455da;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    border-radius: 0;
+  }
+  ::v-deep(.el-button:active){
+    --el-button-active-bg-color: #FFF;
+  }
+}
 </style>

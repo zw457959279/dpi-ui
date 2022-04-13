@@ -16,23 +16,36 @@ import demo2 from './demo2.vue'
 请写明组件使用场景
 
 ## 基础用法
+
 <Preview comp-name="CountTo" demo-name="demo">
   <demo />
 </Preview>
 
 ## 后缀使用
+
 <Preview comp-name="CountTo" demo-name="demo">
   <demo2 />
 </Preview>
 
 ## 属性
-参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
-:-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否 
-`arg2` | 第二个参数 | string | - | `default` | 否
+
+|    参数     |     说明     |  类型   | 可选值 |  默认值   | 是否必填 |
+| :---------: | :----------: | :-----: | :----: | :-------: | :------: |
+| `startVal`  |    起始值    | number  |   -    | `default` |    否    |
+|  `endVal`   |    最终值    | number  |   -    | `default` |    否    |
+| `duration`  |   持续时间   | number  |   -    | `default` |    否    |
+| `autoplay`  | 是否自动触发 | boolean |   -    | `default` |    否    |
+| `decimals`  | 小数点后位数 | number  |   -    | `default` |    否    |
+|  `prefix`   |     前缀     | string  |   -    |   `''`    |    否    |
+|  `suffix`   |     后缀     | string  |   -    |   `''`    |    否    |
+| `separator` |    分隔符    | string  |   -    |    `,`    |    否    |
+|  `decimal`  |    小数点    | string  |   -    |    `.`    |    否    |
+|   `color`   |     颜色     | string  |   -    |    ``     |    否    |
+| `useEasing` | 数字动画类型 | string  |   -    | `linear`  |    否    |
 
 ## 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+
+|    事件名    |       说明       |  参数列表  | 参数说明 |
+| :----------: | :--------------: | :--------: | :------: |
+| `onStarted`  | 数字动画开始回调 | function() |          |
+| `onFinished` | 数字动画结束回调 | function() |          |

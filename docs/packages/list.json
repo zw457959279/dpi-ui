@@ -1,11 +1,5 @@
 [
   {
-    "compName": "StrengthMeter",
-    "compZhName": "密码强度组件",
-    "compDesc": "验证密码强度",
-    "compClassName": "strength-meter"
-  },
-  {
     "compName": "CountTo",
     "compZhName": "数字动画组件",
     "compDesc": "这是一个有数字动画的组件",
@@ -22,5 +16,89 @@
     "compZhName": "预警消息",
     "compDesc": "轮播展示当前预警信息",
     "compClassName": "alarm-info"
+  },
+  {
+    "compName": "Cascader",
+    "compZhName": "级联选择器",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "cascader"
+  },
+  {
+    "compName": "Select",
+    "compZhName": "选择器",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "select"
+  },
+  {
+    "compName": "Tooltip",
+    "compZhName": "文字提示",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "tooltip"
+  },
+  {
+    "compName": "Transfer",
+    "compZhName": "穿梭框",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "transfer"
+  },
+  {
+    "compName": "Dialog",
+    "compZhName": "对话框",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "dialog"
+  },
+  {
+    "compName": "Pagination",
+    "compZhName": "分页",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "pagination"
+  },
+  {
+    "compName": "Input",
+    "compZhName": "输入框",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "input"
+  },
+  {
+    "compName": "DataPicker",
+    "compZhName": "日期选择器",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "data-picker"
+  },
+  {
+    "compName": "Button",
+    "compZhName": "按钮",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "button"
+  },
+  {
+    "compName": "Checkbox",
+    "compZhName": "多选框",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "checkbox"
+  },
+  {
+    "compName": "Radio",
+    "compZhName": "单选框",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "radio"
+  },
+  {
+    "compName": "Switch",
+    "compZhName": "开关",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "switch"
+  },
+  {
+    "compName": "Upload",
+    "compZhName": "上传",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "upload"
+  },
+  {
+    "compName": "Icon",
+    "compZhName": "图标",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "icon"
   }
 ]

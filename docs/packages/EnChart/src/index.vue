@@ -24,30 +24,10 @@ const props = defineProps({
   }
 })
 
-watch(props.data,
-  (data) => {
-    const option = deepMerge(chartOptions, {
-      series: [
-        {
-          type: 'line',
-          itemStyle: {
-            color: '#26D1D4',
-            borderColor: '#26D1D4'
-          },
-          // showSymbol: false,
-          clip: true,
-          data
-        }
-      ]
-    })
-    setOptions(option)
-  })
-
 const charRef = ref()
 const { setOptions } = useECharts(charRef)
 const degrees = ['E', '30°', '60', 'S', '120', '150', 'W', '210', '240', 'N', '300°', '330°']
 const scales = ['0', '0.1', '0.2', '0.3', '0.4']
-
 const chartOptions = {
   polar: {
     center: ['50%', '50%']
@@ -152,6 +132,27 @@ const chartOptions = {
     }
   ]
 }
+
+watch(() => props.data,
+  (data) => {
+    const option = deepMerge(chartOptions, {
+      series: [
+        {
+          type: 'line',
+          itemStyle: {
+            color: '#26D1D4',
+            borderColor: '#26D1D4'
+          },
+          clip: true,
+          data
+        }
+      ]
+    })
+    setOptions(option)
+  }, {
+    immediate: true
+  }
+)
 
 setOptions(chartOptions)
 

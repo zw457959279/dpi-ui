@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <d-alarm-info :infos="infos" />
-  </div>
+    <d-alarm-info class="chart" :infos="infos" />
 </template>
 
 <script setup>
@@ -15,3 +13,9 @@ const infos = ref([
   },
 ])
 </script>
+
+<style lang="less">
+.chart {
+  width: 500px;
+}
+</style>

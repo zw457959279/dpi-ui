@@ -58,7 +58,7 @@ const infoListRef = ref([])
 watch(props.infos, (data) => {
   debugger
   infoListRef.value.push(...data)
-  infoListRef.value = uniqBy(infoListRef.value, 'id')
+  infoListRef.value = uniqBy(infoListRef.value, uniqKey)
 })
 
 const handleSlideChangeTransitionEnd = () => {
