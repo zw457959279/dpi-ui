@@ -16,6 +16,7 @@ export default defineConfig({
       external: ['vue'],
       output: {
         name: 'lib',
+        // assetFileNames: '[name]-[hash].[ext]',
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
           vue: 'Vue'

@@ -22,6 +22,7 @@ const data = reactive({
 </script>
 
 <style lang="less">
+@import url('./assets/style/element-plus.css');
 html,
 body {
   margin: 0;
