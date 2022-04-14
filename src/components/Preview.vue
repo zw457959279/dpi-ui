@@ -9,7 +9,7 @@
     </div>
 
     <div class="preview-bottom">
-      <span name="Code" @click="showSourceCode">{{'</>'}}</span>
+      <span name="Code" @click="showSourceCode">{{ message }}</span>
     </div>
   </div>
 </template>
@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       sourceCode: '',
+      message: '</>',
       codeVisible: false,
     };
   },

@@ -5,9 +5,10 @@
 引入方式
 
 ```shell
-import DLib from 'dpi-ui/packages';
+import DLib from '/dpi-ui/lib/dpi.es'
+import '/dpi-ui/lib/index.css'
 const app = createApp(App)
-app.use(DLib);
+app.use(DLib)
 ```
 
 ### 生成新组件模板
