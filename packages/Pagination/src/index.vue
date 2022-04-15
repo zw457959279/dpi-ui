@@ -1,8 +1,8 @@
 <template>
   <div class="d-pagination">
     <el-pagination
-      v-model:currentPage="currentPage"
-      v-model:page-size="pageSize"
+      :currentPage="currentPage"
+      :page-size="pageSize"
       :page-sizes="pageSizes"
       :layout="layout"
       :total="total"
@@ -77,10 +77,11 @@ let onCurrentChange = (val) => {
           border-radius: 0!important;
           box-shadow: none;
           border: 1px solid #BCBDBE;
+          padding-left: 0px!important;
         }
         .el-input__inner:focus{
           border-color: #0455da;
-          box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+          box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
         }
       }
     }
@@ -102,13 +103,25 @@ let onCurrentChange = (val) => {
           }
           .el-input__inner:focus{
             border-color: #0455da;
-            box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+            box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
           }
         }
       }
       .el-select .el-input.is-focus .el-input__inner{
         border-color: #0455da!important;
-        box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+        box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
+      }
+      .el-input__suffix{
+        .el-icon{
+          caret-color: rgba(255,255,255,0);
+          & > svg{
+            display: none;
+          }
+        }
+        .el-select__icon{
+          background: url('./assets/top.png') center no-repeat;
+          background-size: 8px 4px;
+        }
       }
     }
     .el-pager{

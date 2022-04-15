@@ -6,7 +6,7 @@
 
 ```shell
 import DLib from '/dpi-ui/lib/dpi.es'
-import '/dpi-ui/lib/index.css'
+import '/dpi-ui/theme-chalk/index.css'
 const app = createApp(App)
 app.use(DLib)
 ```

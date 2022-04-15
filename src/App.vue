@@ -4,15 +4,20 @@
       <router-link v-for="(link, index) in data.links" :key="index" :to="link.path">{{ link.name }}</router-link>
     </aside>
     <main>
-      <router-view></router-view>
+      <el-config-provider :locale="locale">
+        <router-view></router-view>
+      </el-config-provider>
     </main>
   </div>
 </template>
 
 <script setup>
 import ComponentList from 'packages/list.json';
-import { reactive, ref } from 'vue'
+import { reactive, ref } from 'vue';
+import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import { ElConfigProvider } from 'element-plus';
 
+const locale = ref(zhCn);
 const data = reactive({
   links: ComponentList.map(item => ({
     path: `/components/${item.compName}`,
@@ -46,7 +51,7 @@ body {
     }
   }
   main {
-    width: 100%;
+    width: calc(100% - 200px);
     flex: 1;
     padding: 15px;
     box-sizing: border-box;

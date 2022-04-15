@@ -41,13 +41,23 @@ const modelValue = computed({
       }
       .el-input__inner:focus{
         border-color: #0455da;
-        box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+        box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
+      }
+      & > .el-input__suffix{
+        .el-input__icon{
+          caret-color: rgba(255,255,255,0);
+          background: url('./assets/caretbottom.png') center no-repeat;
+          background-size: 8px 4px;
+          & > svg{
+            display: none;
+          }
+        }
       }
     }
     .is-focus{
       .el-input__inner{
         border-color: #0455da;
-        box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+        box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
       }
     }
   }

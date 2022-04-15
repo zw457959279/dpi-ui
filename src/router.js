@@ -93,6 +93,21 @@
     name: 'Icon',
     path: '/components/Icon',
     component: () => import('packages/Icon/docs/README.md'),
+  },{
+    title: '表格',
+    name: 'Table',
+    path: '/components/Table',
+    component: () => import('packages/Table/docs/README.md'),
+  },{
+    title: '菜单',
+    name: 'Menu',
+    path: '/components/Menu',
+    component: () => import('packages/Menu/docs/README.md'),
+  },{
+    title: '图表',
+    name: 'Echart',
+    path: '/components/Echart',
+    component: () => import('packages/Echart/docs/README.md'),
   }];
  
  const routerConfig = {

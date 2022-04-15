@@ -2,7 +2,7 @@
   <div class="d-transfer">
     <div class="left_transfer">
       <div class="search_box">
-        <el-select v-model="modelValue" clearable filterable @change="changeSelect" :placeholder="privateProps['select-prop'].placeholder">
+        <el-select v-model="modelValue" clearable filterable @change="changeSelect" :suffix-icon="CaretTop" :placeholder="privateProps['select-prop'].placeholder">
           <el-option
             v-for="item in leftData"
             :key="item[privateProps['select-prop'].value]"
@@ -42,7 +42,7 @@
 
 <script setup>
 import { ElIcon, ElTable, ElTableColumn, ElSelect, ElOption } from 'element-plus';
-import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue';
+import { ArrowLeft, ArrowRight, CaretTop } from '@element-plus/icons-vue';
 import { computed, ref, watch, unref, watchEffect, reactive, onMounted, onBeforeMount, nextTick, useAttrs } from 'vue';
 
 const attrs = useAttrs();
@@ -253,13 +253,13 @@ onMounted(() => {
           }
           .el-input__inner:focus{
             border-color: #0455da!important;
-            box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+            box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
           }
         }
         .el-input.is-focus{
           .el-input__inner{
             border-color: #0455da;
-            box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+            box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
           }
         }
         .el-icon{

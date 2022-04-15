@@ -60,7 +60,16 @@ let getTime = (item) => {
     }
     .el-input__inner:focus{
       border-color: #0455da;
-      box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+      box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
+    }
+    .el-input__prefix{
+      .el-input__icon{
+        background: url('./assets/icon_time.png') center no-repeat;
+        background-size: 14px 14px;
+        & > svg{
+          display: none;
+        }
+      }
     }
   }
   ::v-deep(.el-date-editor--daterange){
@@ -70,10 +79,17 @@ let getTime = (item) => {
     border-radius: 0;
     box-shadow: none;
     border: 1px solid #BCBDBE;
+    .el-input__icon.el-range__icon{
+      background: url('./assets/icon_time.png') center no-repeat;
+      background-size: 14px 14px;
+      & > svg{
+        display: none;
+      }
+    }
   }
   ::v-deep(.el-date-editor--daterange.is-active){
     border-color: #0455da;
-    box-shadow: 0 0 0 1px rgb(4 85 218 / 20%);
+    box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
   }
 }
 </style>

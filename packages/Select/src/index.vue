@@ -1,6 +1,6 @@
 <template>
   <div class="d-select">
-    <el-select v-model="modelValue" :placeholder="privateProps.placeholder" :disabled="privateProps.disabled" :multiple="privateProps.multiple" :clearable="privateProps.clearable" :collapse-tags="privateProps['collapse-tags']" :filterable="privateProps.filterable">
+    <el-select v-model="modelValue" :placeholder="privateProps.placeholder" :disabled="privateProps.disabled" :multiple="privateProps.multiple" :clearable="privateProps.clearable" :collapse-tags="privateProps['collapse-tags']" :filterable="privateProps.filterable" :suffix-icon="CaretTop">
       <el-option
         v-for="item in options"
         :key="item[privateProps.value]"
@@ -14,6 +14,8 @@
 <script setup>
 import { computed, ref, watch, unref, watchEffect, reactive, onMounted, nextTick, useAttrs } from 'vue';
 import { ElSelect, ElOption, ElTree } from 'element-plus';
+import { CaretTop } from '@element-plus/icons-vue';
+
 
 const attrs = useAttrs();
 let privateProps = reactive({
@@ -77,18 +79,24 @@ onMounted(() => {
         }
         .el-input__inner:focus{
           border-color: #0455da;
-          box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+          box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
         }
       }
       .el-input.is-focus{
         .el-input__inner{
           border-color: #0455da;
-          box-shadow: 0 0 0 1px rgb(4 85 218 / 20%)!important;
+          box-shadow: 0 0 0 1px rgba(4, 85, 218, 0.2)!important;
         }
       }
       .el-icon{
         color: #374153!important;
       }
+      // .el-icon::after{
+      //   content: '';
+      // }
+      // .el-icon::before{
+      //   content: '\e78f';
+      // }
       .el-select__tags{
         .el-tag--info{
           font-size: 14px;

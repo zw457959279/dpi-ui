@@ -23,6 +23,9 @@ import { RadioPlugin } from './Radio';
 import { SwitchPlugin } from './Switch';
 import { UploadPlugin } from './Upload';
 import { IconPlugin } from './Icon';
+import { TablePlugin } from './Table';
+import { MenuPlugin } from './Menu';
+import { EchartPlugin } from './Echart';
 
 const DPlugin = {
   install(app) {
@@ -43,6 +46,9 @@ const DPlugin = {
     SwitchPlugin.install?.(app);
     UploadPlugin.install?.(app);
     IconPlugin.install?.(app);
+    TablePlugin.install?.(app);
+    MenuPlugin.install?.(app);
+    EchartPlugin.install?.(app);
   },
 };
 
@@ -65,3 +71,6 @@ export * from './Radio'
 export * from './Switch'
 export * from './Upload'
 export * from './Icon'
+export * from './Table'
+export * from './Menu'
+export * from './Echart'

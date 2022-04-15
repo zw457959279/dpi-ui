@@ -100,5 +100,23 @@
     "compZhName": "图标",
     "compDesc": "默认：这是一个新组件",
     "compClassName": "icon"
+  },
+  {
+    "compName": "Table",
+    "compZhName": "表格",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "table"
+  },
+  {
+    "compName": "Menu",
+    "compZhName": "菜单",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "menu"
+  },
+  {
+    "compName": "Echart",
+    "compZhName": "图表",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "echart"
   }
 ]
